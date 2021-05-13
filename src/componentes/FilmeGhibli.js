@@ -11,20 +11,20 @@ const FilmeGhibli = (props) => {
 
 class Linha extends React.Component {
     render() {
-        const filme = this.props.filme;
+        const filmes = this.props.filmes;
 
         return (
             <tr>
-                <td>{filme.id}</td>
-                <td>{filme.title}</td>
-                <td>{filme.original_title}</td>
-                <td>{filme.original_title_romanised}</td>
-                <td>{filme.description}</td>
-                <td>{filme.director}</td>
-                <td>{filme.producer}</td>
-                <td>{filme.release_date}</td>
-                <td>{filme.running_time}</td>
-                <td>{filme.rt_score}</td>
+                <td>{filmes.id}</td>
+                <td>{filmes.title}</td>
+                <td>{filmes.original_title}</td>
+                <td>{filmes.original_title_romanised}</td>
+                <td>{filmes.description}</td>
+                <td>{filmes.director}</td>
+                <td>{filmes.producer}</td>
+                <td>{filmes.release_date}</td>
+                <td>{filmes.running_time}</td>
+                <td>{filmes.rt_score}</td>                
             </tr>
         );
     }
@@ -37,7 +37,7 @@ class TabelaDeProdutos extends React.Component {
         this.props.listaDeProdutos.forEach(
             (filme) => {
                 linhas.push(
-                    <Linha filme={filme} />
+                    <Linha filmes={filme} />
                 );
             }
         );
@@ -55,7 +55,7 @@ class TabelaDeProdutos extends React.Component {
                         <th>Produtor</th>
                         <th>Data de Lançamento</th>
                         <th>Tempo de filme</th>
-                        <th>Nota</th>
+                        <th>Nota</th>                       
                     </tr>
                 </thead>
                 <tbody>{linhas}</tbody>

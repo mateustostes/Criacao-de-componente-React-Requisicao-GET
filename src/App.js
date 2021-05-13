@@ -7,16 +7,16 @@ function App() {
   const CarregandoProdutos = hoc(FilmeGhibli);
   const [estadoDaAplicacao, setEstadoDaAplicacao] = useState({
     consultando: false,
-    produtos: null,
+    filmes: null,
   });
 
   useEffect(() => {
     setEstadoDaAplicacao({ consultando: true });
-    const apiUrl = `https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49`;
+    const apiUrl = `https://ghibliapi.herokuapp.com/films`;
     fetch(apiUrl)
       .then((res) => res.json())
       .then((repos) => {
-        setEstadoDaAplicacao({ consultando: false, filmes: repos.content });
+        setEstadoDaAplicacao({ consultando: false, filmes: repos});
       });
   }, [setEstadoDaAplicacao]);
   
